@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">datamovie_movie_listing.datamovie_movie_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>datamovie_movie_columns</spinner>
+        <deps>
+            <dep>datamovie_movie_listing.datamovie_movie_listing_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="add">
+                <url path="*/*/addnewmovie"/>
+                <class>save primary</class>
+                <label translate="true">Add new movie</label>
+            </button>
+        </buttons>
+    </settings>
+    <dataSource name="datamovie_movie_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">item_id</param>
+            </storageConfig>
+        </settings>
+        <aclResource>Magento_Reports::salesroot_sales</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="datamovie_movie_listing_data_source">
+            <settings>
+                <requestFieldName>movie_id</requestFieldName>
+                <primaryFieldName>movie_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button"/>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </filters>
+        <paging name="listing_paging"/>
+        <massaction name="listing_massaction" />
+    </listingToolbar>
+    <columns name="datamovie_movie_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>movie_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="movie_id">
+            <settings>
+                <label translate="true">Movie ID</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <label translate="true">Movie Name</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="description">
+            <settings>
+                <label translate="true">Movie Description</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="rating">
+            <settings>
+                <label translate="true">Movie Rating</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="director_name">
+            <settings>
+                <label translate="true">Director name</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+    </columns>
+</listing>
