@@ -1,0 +1,24 @@
+<?php
+/**
+ * @var \Intern\Chapter45\Block\Infomovie $block
+ */
+   $dt = $block->getInfoMovie();
+?>
+<h1>Thông tin</h1>
+<hr>
+<h2>Đạo diễn:</h2>
+<p>
+    <?php
+    echo($dt[0]["director_name"]);
+    ?>
+</p>
+<h2>Diễn viên:</h2>
+<?php
+$dsdv = [];
+foreach($dt as $value):
+    $dsdv[] = $value["name_actor"];
+endforeach;
+echo implode ( ', ' , $dsdv);
+?>.
+
+
