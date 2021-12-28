@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Intern_Chapter45::magenest" title="Movie" module="Intern_Chapter45" sortOrder="41" resource="Intern_Chapter45::menu"/>
+        <add id="Intern_Chapter45::parent" title="Magenest" module="Intern_Chapter45" sortOrder="10" resource="Intern_Chapter45::menu" parent="Intern_Chapter45::magenest"/>
+        <add id="Intern_Chapter45::movie" title="Magenest Movie" module="Intern_Chapter45" sortOrder="10" action="datamovie/movie/index" resource="Intern_Chapter45::movie" parent="Intern_Chapter45::parent"/>
+        <add id="Intern_Chapter45::director" title="Magenest Director" module="Intern_Chapter45" sortOrder="10" action="datamovie/movie/director" resource="Intern_Chapter45::director" parent="Intern_Chapter45::parent"/>
+        <add id="Intern_Chapter45::actor" title="Magenest Actor" module="Intern_Chapter45" sortOrder="10" action="datamovie/movie/actor" resource="Intern_Chapter45::actor" parent="Intern_Chapter45::parent"/>
+    </menu>
+</config>
