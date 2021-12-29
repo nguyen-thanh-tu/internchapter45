@@ -45,15 +45,6 @@ class Save extends Action
                 'rating' => $movieDataPost['rating'],
                 'director_id' => $movieDataPost['director_id'],
             ];
-            $actorid = $movieDataPost['actor_id'];
-
-            foreach ($actorid as $idactor)
-            {
-                $acid[] = '('.$id.','.$idactor.')';
-            }
-
-            $insertActor = implode( ', ' , $acid);
-            $this->movieActorCollection->insertToTable($insertActor);
 
             $post = $this->movieFactory->create();
 
@@ -64,6 +55,20 @@ class Save extends Action
                 $post->addData($newData);
                 $this->_eventManager->dispatch("intern_chapter45_save_movie", ['movieData' => $post]);
                 $post->save();
+                
+                $actorid = $movieDataPost['actor_id'];
+
+                foreach ($actorid as $idactor)
+                {
+                    $acid[] = '('.$post->getData('movie_id').','.$idactor.')';
+                }
+
+                $insertActor = implode( ', ' , $acid);
+                if ($id) {
+                    $this->movieActorCollection->deleteDataByMovieId($id);
+                }
+                $this->movieActorCollection->insertToTable($insertActor);
+                
                 $this->messageManager->addSuccessMessage(__('You saved the movie.'));
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage(__($e->getMessage()));
