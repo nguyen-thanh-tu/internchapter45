@@ -108,7 +108,9 @@ class Avatar extends Template
 
     public function getMediaUrl()
     {
-        return $this->getBaseUrl() . 'pub/media/';
+        $storeCode = $this->storeManager->getStore()->getCode();
+        $storeUrl = $this->storeManager->getStore()->getBaseUrl();
+        return str_replace($storeCode.'/', 'pub/media/', $storeUrl);
     }
 
     public function getCustomerImageUrl($filePath)
@@ -118,9 +120,8 @@ class Avatar extends Template
 
     public function getFileUrl()
     {
-        $url = $this->getCustomer()->getCustomAttribute("avatar")->getValue();
-        if (!empty($url)) {
-           return $this->getCustomerImageUrl($url);
+        if (!empty($url = $this->getCustomer()->getCustomAttribute("avatar"))) {
+            return $this->getCustomerImageUrl($url->getValue());
         }
         return false;
     }
