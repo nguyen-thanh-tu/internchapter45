@@ -12,7 +12,9 @@
         <div class="box box-information">
             <div class="box-content">
                 <p>
+                    <?php if($block->getFileUrl() != false){ ?>
                     <img src="<?php echo $block->getFileUrl() ?>" alt="image" /><br>
+                    <?php } ?>
                     <?= $block->escapeHtml("Full name: ".$block->getName()) ?><br>
                     <?= $block->escapeHtml("Email: ".$block->getCustomer()->getEmail()) ?><br>
                 </p>
