@@ -13,15 +13,18 @@ class AdminValidateCustomer implements \Magento\Framework\Event\ObserverInterfac
         $request = ($observer->getData())['request'];
         if(isset(($request->getParam('customer'))['avatar']))
         {
-            $filename = ($request->getParam('customer'))['avatar']['0']['tmp_name'];
-            $array = explode ( '.' , $filename);
-            $fileextension = array_pop($array);
-            $validateImage = ['png', 'jpg', 'jpeg', 'gif'];
-            if(in_array($fileextension, $validateImage) == false){
-                throw new LocalizedException(
-                    __('Image format is not true.')
-                );
-                return false;
+            if(isset(($request->getParam('customer'))['avatar']['0']['tmp_name']))
+            {
+                $filename = ($request->getParam('customer'))['avatar']['0']['tmp_name'];
+                $array = explode ( '.' , $filename);
+                $fileextension = array_pop($array);
+                $validateImage = ['png', 'jpg', 'jpeg', 'gif'];
+                if(in_array($fileextension, $validateImage) == false){
+                    throw new LocalizedException(
+                        __('Image format is not true.')
+                    );
+                    return false;
+                }
             }
         }
         return $observer;
