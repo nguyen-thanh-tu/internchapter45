@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_customer_save_after">
+        <observer name="intern_customizeInAdminhtml_admin_save_customer" instance="Intern\CustomizeInAdminhtml\Observer\AdminSaveCustomer" />
+    </event>
+    <event name="controller_action_catalog_product_save_entity_after">
+        <observer name="intern_customizeInAdminhtml_action_catalog_product_saver" instance="Intern\CustomizeInAdminhtml\Observer\CatalogProductSave" />
+    </event>
+    <event name="email_order_set_template_vars_before">
+        <observer name="add_Custom_variable_to_Order"
+                  instance="Intern\CustomizeInAdminhtml\Observer\ObserverforAddCustomVariable" />
+    </event>
+    <event name="checkout_submit_all_after">
+        <observer name="intern_customizeInAdminhtml_send_order_email" instance="Intern\CustomizeInAdminhtml\Observer\SendOrderEmailObserver"/>
+    </event>
+</config>
