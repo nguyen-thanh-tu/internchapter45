@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="course_start" xsi:type="array">
+                    <item name="class" xsi:type="string">Intern\CustomizeInAdminhtml\Ui\DataProvider\Product\Form\Modifier\NewField</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="course_end" xsi:type="array">
+                    <item name="class" xsi:type="string">Intern\CustomizeInAdminhtml\Ui\DataProvider\Product\Form\Modifier\NewField</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+                <item name="references" xsi:type="array">
+                    <item name="class" xsi:type="string">Intern\CustomizeInAdminhtml\Ui\DataProvider\Product\Form\Modifier\References</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses">
+        <plugin name="intern_customizeinadminhtml_customer_data_provider_plugin"
+                type="Intern\CustomizeInAdminhtml\Plugin\DataProviderWithDefaultAddressesPlugin"/>
+    </type>
+</config>

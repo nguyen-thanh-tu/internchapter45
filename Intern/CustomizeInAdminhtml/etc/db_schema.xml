@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+    <!--
+    /**
+     * Copyright © Magento, Inc. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+    -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="references_file" resource="default" engine="innodb" comment="Magenest Derector">
+        <column xsi:type="int" name="references_file_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="File ID"/>
+        <column xsi:type="text" name="references_file_title" nullable="false" comment="Title File"/>
+        <column xsi:type="text" name="references_file_name" nullable="false" comment="File Name"/>
+        <column xsi:type="text" name="references_file" nullable="false" comment="File"/>
+        <column xsi:type="text" name="references_file_size" nullable="false" comment="File Size"/>
+        <column xsi:type="text" name="references_file_status" nullable="false" comment="File Status"/>
+        <column xsi:type="int" name="product_entity_id"  unsigned="true" nullable="false" identity="false" comment="Product Entity ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="references_file_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="REFERENCES_FILE_PRODUCT_ENTITY_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
+                    table="references_file" column="product_entity_id" referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+    <table name="references_link" resource="default" engine="innodb" comment="Magenest Actor">
+        <column xsi:type="int" name="references_link_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Link ID"/>
+        <column xsi:type="text" name="references_link_title" nullable="false" comment="Title Link"/>
+        <column xsi:type="text" name="references_link" nullable="false" comment="Link"/>
+        <column xsi:type="int" name="product_entity_id" unsigned="true" nullable="false" identity="false" comment="Product Entity ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="references_link_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="REFERENCES_LINK_PRODUCT_ENTITY_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
+                    table="references_link" column="product_entity_id" referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+</schema>
