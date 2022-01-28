@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \Intern\Chapter9\Block\Blog\Index $block
+ */
+$data = $block->getDataBlog();
+?>
+<?php foreach($data['blog'] as $post){
+    if ($post['status'] == '1'){
+    ?>
+<p>
+    <a href="<?php echo $post['url']; ?>">
+    <h3>
+        <?php echo $post['title']; ?>
+    </h3>
+    <p>
+        <?php echo $post['description']; ?>
+    </p>
+    </a>
+</p></br>
+<?php }} ?>
