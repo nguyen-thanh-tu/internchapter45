@@ -39,7 +39,7 @@ class Save extends Action
         $id = !empty($data['datamovie_addnewmovie']['movie_id']) ? $data['datamovie_addnewmovie']['movie_id'] : null;
 
         if ($movieDataPost = $data['datamovie_addnewmovie']) {
-            if($movieDataPost['rating'] < 0 || is_int($movieDataPost['rating']) == false)
+            if($movieDataPost['rating'] < 0 || is_int((int)$movieDataPost['rating']) == false)
             {
                 $this->messageManager->addErrorMessage('Rating must greater than 0');
                 return $this->resultRedirectFactory->create()->setPath($_SERVER['HTTP_REFERER']);
