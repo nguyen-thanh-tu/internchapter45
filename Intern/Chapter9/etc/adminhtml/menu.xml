@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Intern_Chapter9::magenest" title="Blog" module="Intern_Chapter9" sortOrder="41" resource="Intern_Chapter9::menu"/>
+        <add id="Intern_Chapter9::parent" title="Blog" module="Intern_Chapter9" sortOrder="10" resource="Intern_Chapter9::parent" parent="Intern_Chapter9::magenest"/>
+        <add id="Intern_Chapter9::blog" title="Magenest Blog" module="Intern_Chapter9" sortOrder="10" action="blog/blog/index" resource="Intern_Chapter9::movie" parent="Intern_Chapter9::parent"/>
+        <add id="Intern_Chapter9::category" title="Magenest Category" module="Intern_Chapter9" sortOrder="10" action="blog/category/index" resource="Intern_Chapter9::director" parent="Intern_Chapter9::parent"/>
+    </menu>
+</config>
