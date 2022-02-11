@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Intern
+ * Copyright (C) 2020 Intern <info@Intern.com>
+ *
+ * @package Intern_BuyNow
+ * @copyright Copyright (c) 2020 Intern (http://www.Intern.com/)
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License,version 3 (GPL-3.0)
+ * @author Intern <info@Intern.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="buynow" frontName="buynow">
+            <module name="Intern_BuyNow"/>
+        </route>
+    </router>
+</config>
