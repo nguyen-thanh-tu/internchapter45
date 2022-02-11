@@ -1,7 +1,0 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-        <add id="Intern_Banner::banner_manager" title="Banner Manager" module="Intern_Banner" resource="Intern_Banner::banner_manager" sortOrder="50"/>
-        <add id="Intern_Banner::list_banner" title="List Banners" module="Intern_Banner" action="banner" resource="Intern_Banner::banner_manager" parent="Intern_Banner::banner_manager"/>
-        <add id="Intern_Banner::new_banner" title="New Banner" module="Intern_Banner" action="banner/index/new" resource="Intern_Banner::save" parent="Intern_Banner::banner_manager"/>
-    </menu>
-</config>
