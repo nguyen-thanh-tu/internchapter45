@@ -1,0 +1,6 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock class="Intern\HidePrice\Block\Product\ListProduct" name="category.products.list" template="Intern_HidePrice::product/list.phtml">
+        </referenceBlock>
+    </body>
+</page>
