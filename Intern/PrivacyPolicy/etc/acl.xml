@@ -17,7 +17,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Intern_HidePrice::config" title="Hide Price Setting" sortOrder="50" />
+                            <resource id="Intern_PrivacyPolicy::config" title="Privacy Policy Setting" sortOrder="50" />
                         </resource>
                     </resource>
                 </resource>
