@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var $block \Intern\ShowOrder\Block\Onepage\Success\Details
+ */
+$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$_Symbol = $_objectManager
+    ->create('Magento\Directory\Model\CurrencyFactory')
+    ->create()
+    ->load($block->getOrder()->getStoreCurrencyCode());
+?>
+<div class="block block-order-details">
+    <strong class="box-title">
+        <span>Order Detail:</span>
+    </strong>
+    <div class="order-number"><?= __('Order Number: ') ?>
+        <?= $block->getOrder()->getIncrementId() ?>
+    </div>
+    <div class="order-total"><?= __('Total: ') ?>
+        <?= $_Symbol->getCurrencySymbol().$block->getOrder()->getGrandToTal() ?>
+    </div>
+    <div class="order-date"><?= __('Order created at: ') ?>
+        <?= $block->getOrder()->getCreatedAt() ?>
+    </div>
+</div>
+<div class="block block-order-shipping-method">
+    <strong class="box-title">
+        <span>Payment method:</span>
+    </strong>
+    <div class="order-shipping-method">
+        <?= $block->getOrder()->getShippingDescription() ?>
+    </div>
+</div>
+<div class="block block-order-payment-method">
+    <strong class="box-title">
+        <span>Payment method:</span>
+    </strong>
+    <div class="order-payment-method">
+        <?= $block->getOrder()->getPayment()->getAdditionalInformation('method_title') ?>
+    </div>
+</div>
