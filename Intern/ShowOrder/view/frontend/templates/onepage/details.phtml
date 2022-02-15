@@ -7,11 +7,7 @@
 /**
  * @var $block \Intern\ShowOrder\Block\Onepage\Success\Details
  */
-$_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$_Symbol = $_objectManager
-    ->create('Magento\Directory\Model\CurrencyFactory')
-    ->create()
-    ->load($block->getOrder()->getStoreCurrencyCode());
+$_Symbol = $block->getSymbol();
 ?>
 <div class="block block-order-details">
     <strong class="box-title">

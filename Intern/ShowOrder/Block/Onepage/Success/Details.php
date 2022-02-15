@@ -16,15 +16,22 @@ class Details extends Template
      */
     protected $session;
 
+    /**
+     * @var \Magento\Directory\Model\CurrencyFactory
+     */
+    protected $currencyFactory;
+
     public function __construct(
         Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Checkout\Model\Session $session,
+        \Magento\Directory\Model\CurrencyFactory $currencyFactory,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->registry = $registry;
         $this->session = $session;
+        $this->currencyFactory = $currencyFactory;
     }
 
     protected function _prepareLayout()
@@ -45,5 +52,11 @@ class Details extends Template
     {
         return $this->session->getLastRealOrder();
     }
+
+    public function getSymbol()
+    {
+        return $this->currencyFactory->create()->load($this->getOrder()->getStoreCurrencyCode());
+    }
 }
+
 
