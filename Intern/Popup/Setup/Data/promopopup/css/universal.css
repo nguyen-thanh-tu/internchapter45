@@ -1,0 +1,100 @@
+/* COMMON */
+
+.Intern-popup {
+    background: #fff;
+}
+    .Intern-popup__note > em {
+        color: #f89a1c;
+    }
+    .Intern-popup__note > code {
+        color: #ed7d53;
+    }
+    .Intern-popup__input > input {
+        background: #f2f2f2;
+        border-color: #f2f2f2;
+    }
+    .Intern-popup__actions > .action {
+        color: #fff;
+        background: #000;
+        border-color: #000;
+    }
+    .Intern-popup__actions > .action:hover,
+    .Intern-popup__actions > .action:focus,
+    .Intern-popup__actions > .action:active {
+        color: #fff;
+        background: #f89a1c;
+        border-color: #f89a1c;
+    }
+
+/* DESIGN 1 */
+
+.Intern-popup__theme1 {
+}
+    .Intern-popup__theme1 .Intern-popup__image {
+        background: #f7d0c1;
+    }
+    .Intern-popup__theme1.Intern-popup__step2 .Intern-popup__note {
+    }
+        .Intern-popup__theme1.Intern-popup__step2 .Intern-popup__note > em {
+            color: #a0041d;
+        }
+
+/* DESIGN 2 */
+
+.Intern-popup__theme2 {
+}
+.Intern-popup__theme2.Intern-popup__step2 {
+    color: #fff;
+    background: #000;
+}
+    .Intern-popup__theme2.Intern-popup__step2 .Intern-popup__image:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, #000 100%);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, #000 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #000 100%);
+    }
+    .Intern-popup__theme2.Intern-popup__step2 .Intern-popup__actions > .action {
+        background: #f89a1c;
+        border-color: #f89a1c;
+    }
+
+/* DESIGN 3 */
+
+.Intern-popup__theme3 {
+}
+    .Intern-popup__theme3 .Intern-popup__image {
+        background: #220021;
+    }
+
+.Intern-popup__theme3.Intern-popup__step2 {
+    color: #fff;
+    background: #220021;
+}
+    .Intern-popup__theme3.Intern-popup__step2 .Intern-popup__actions > .action {
+        background: #f89a1c;
+        border-color: #f89a1c;
+    }
+
+/* DESIGN 4 */
+
+.Intern-popup__theme4 {
+}
+    .Intern-popup__theme4 .Intern-popup__image {
+        background: #220021;
+    }
+
+.Intern-popup__theme4.Intern-popup__step2 {
+    color: #fff;
+    background: #220021;
+}
+    .Intern-popup__theme4.Intern-popup__step2 .Intern-popup__actions {
+        }
+        .Intern-popup__theme4.Intern-popup__step2 .Intern-popup__actions > .action {
+            background: #f89a1c;
+            border-color: #f89a1c;
+        }
