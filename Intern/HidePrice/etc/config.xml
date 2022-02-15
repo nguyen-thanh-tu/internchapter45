@@ -12,11 +12,10 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <privacy_policy>
-            <general>
-                <enable>1</enable>
-                <cms_block></cms_block>
-            </general>
-        </privacy_policy>
+        <magenest_checkout>
+            <success_page>
+                <show_order_detail>1</show_order_detail>
+            </success_page>
+        </magenest_checkout>
     </default>
 </config>
