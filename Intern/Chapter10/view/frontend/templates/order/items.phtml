@@ -38,7 +38,8 @@
             <tbody>
                 <?= $block->getItemHtml($item) ?>
                 <td class="col delivery_date" id="delivery_date_<?php echo $item->getId(); ?>" data-th="DELIVERY_DATE">
-                <?php echo ($item->getData('product_options'))['info_buyRequest']['example-date']; ?>
+                <?php if(isset(($item->getData('product_options'))['info_buyRequest']['example-date']))
+                { echo ($item->getData('product_options'))['info_buyRequest']['example-date']; }?>
                 </td>
                 <?php if ($this->helper(\Magento\GiftMessage\Helper\Message::class)->isMessagesAllowed('order_item', $item) && $item->getGiftMessageId()) : ?>
                     <?php $giftMessage = $this->helper(\Magento\GiftMessage\Helper\Message::class)->getGiftMessageForEntity($item); ?>
