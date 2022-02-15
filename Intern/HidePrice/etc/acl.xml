@@ -17,11 +17,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-<<<<<<< HEAD
-                            <resource id="Intern_HidePrice::config" title="Hide Price Setting" sortOrder="50" />
-=======
                             <resource id="Intern_HidePrice::config" title="Hide Price" sortOrder="50" />
->>>>>>> bc65e821a90c174336749d8793d277f08172b577
                         </resource>
                     </resource>
                 </resource>

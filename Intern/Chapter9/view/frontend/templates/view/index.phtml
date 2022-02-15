@@ -1,0 +1,19 @@
+<?php
+/**
+ * @var \Intern\Chapter9\Block\View\Index $block
+ */
+?>
+<?php
+$blog = $block->getInfoBlog();
+if($blog != null)
+{
+?>
+<h1><?php echo $blog['title'] ?></h1>
+<p>Acthor: <?php echo $blog['actor_name'] ?></p>
+<p><?php echo $blog['created_at']; ?></p>
+<br>
+<p><?php echo $blog['description'] ?></p>
+<br>
+<p><?php echo $blog['content'] ?></p>
+<br>
+<?php } ?>

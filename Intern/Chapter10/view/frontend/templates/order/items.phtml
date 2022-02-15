@@ -25,9 +25,6 @@
                 <th class="col price"><?= $block->escapeHtml(__('Price')) ?></th>
                 <th class="col qty"><?= $block->escapeHtml(__('Qty')) ?></th>
                 <th class="col subtotal"><?= $block->escapeHtml(__('Subtotal')) ?></th>
-<<<<<<< HEAD
-                <th class="col delivery-date"><?= $block->escapeHtml(__('Delivery Date')) ?></th>
-=======
                 <?php $items = $block->getItems();
                 foreach ($items as $item) :
                 if ($item->getParentItem()):
@@ -37,10 +34,8 @@
                 <th class="col delivery-date"><?= $block->escapeHtml(__('Delivery Date')) ?></th>
                 <?php endif;?>
                 <?php endforeach;?>
->>>>>>> bc65e821a90c174336749d8793d277f08172b577
             </tr>
         </thead>
-        <?php $items = $block->getItems(); ?>
         <?php $giftMessage = ''?>
         <?php foreach ($items as $item) :
             if ($item->getParentItem()) :

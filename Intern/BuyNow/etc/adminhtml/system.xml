@@ -19,7 +19,7 @@
             <class>magenest</class>
             <label>Buy Now</label>
             <tab>magenest</tab>
-            <resource>Intern_CustomizeInAdminhtml::Configuration</resource>
+            <resource>Intern_BuyNow::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General Configuration</label>
                 <field id="keep_cart_products" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">

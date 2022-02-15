@@ -1,0 +1,30 @@
+<?php
+/**
+ * Intern LLC.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://store.Intern.com/Intern-LICENSE-COMMUNITY.txt
+ *
+ ********************************************************************
+ * @category   Intern
+ * @package    Intern_Popup
+ * @copyright  Copyright (c) Intern LLC. (http://www.Intern.com)
+ * @license    http://store.Intern.com/Intern-LICENSE-COMMUNITY.txt
+ */
+/** @var $block \Intern\PrivacyPolicy\Block\RegisterForm */
+?>
+<div class="field tcagreecreateaccount required">
+    <?php echo $block->getHtmlBlock() ?>
+    <?php if($block->getHtmlBlock() != ""){ ?>
+    <div class="control">
+        <input type="checkbox" id="tcagreecreateaccount" name="tcagreecreateaccount" data-validate="{required:true}" aria-required="true" class="input-checkbox checkbox required" value="">
+        <label for="tcagreecreateaccount" class="label">
+            <?= __('I agree') ?>
+        </label>
+    </div>
+    <?php } ?>
+</div>

@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Intern\Banner\Block\Sidebar $block
+ */
+echo $block->getstaticBlockContent('sidebar-static-block');
+?>
+<div class="block block-compare" data-bind="scope: 'compareProducts'" data-role="compare-products-sidebar">
+    <div class="block-title">
+        <strong id="block-compare-heading" role="heading" aria-level="2">Compare Products</strong>
+        <span class="counter qty no-display" data-bind="text: compareProducts().countCaption, css: {'no-display': !compareProducts().count}"></span>
+    </div>
+    <!-- ko if: compareProducts().count --><!-- /ko -->
+    <!-- ko ifnot: compareProducts().count -->
+    <div class="empty">You have no items to compare.</div>
+    <!-- /ko -->
+</div>
