@@ -34,7 +34,7 @@ $formData = $block->getFormData();
         <div class="field required">
             <label for="telephone" class="label"><span><?= $block->escapeHtml(__('Telephone')) ?></span></label>
             <div class="control">
-                <input type="text" name="telephone" id="telephone" value="" title="" data-mage-init='{"mage/trim-input":{}}' class="input-text" data-validate="{required:true, 'validate-number':true}">
+                <input type="text" name="telephone" id="telephone" value="" title="" data-mage-init='{"mage/trim-input":{}}' class="input-text" data-validate="{required:true, minlength:10, 'validate-number':true, 'aureatelabsvalidationrule':true}">
             </div>
         </div>
         <?= $block->getLayout()
@@ -388,6 +388,9 @@ script;
                         "passwordSelector": "#password,#password-confirmation"
                     }
                 }
+            },
+            "aureatelabsMethod": {
+                "param": "paramvalue"
             }
         }
     }

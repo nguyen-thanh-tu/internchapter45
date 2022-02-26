@@ -5,5 +5,10 @@ var config = {
                 'Intern_Chapter9/js/action/set-shipping-information': true
             }
         }
+    },
+    map: {
+        "*": {
+            aureatelabsMethod: "Intern_Chapter9/js/aureatelabsValidationRule"
+        }
     }
 };
