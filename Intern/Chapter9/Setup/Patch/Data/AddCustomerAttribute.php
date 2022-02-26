@@ -67,7 +67,7 @@ class AddCustomerAttribute implements DataPatchInterface
             'visible' => true,
             'position' => 333,
             'system' => false,
-            'backend' => ''
+            'backend' => '',
         ]);
         $newAttribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'telephone');
         $newAttribute->addData([

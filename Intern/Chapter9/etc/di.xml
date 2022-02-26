@@ -20,6 +20,12 @@
     <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
         <plugin name="intern_chapter9_edit_custom_shipping_address" type="Intern\Chapter9\Plugin\CustomShippingAddress" sortOrder="2" disabled="false"/>
     </type>
+    <type name="Magento\Customer\Controller\Account\EditPost">
+        <plugin name="intern_chapter9_edit_post" type="Intern\Chapter9\Plugin\EditPost" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Customer\Controller\Account\CreatePost">
+        <plugin name="intern_chapter9_register" type="Intern\Chapter9\Plugin\CreatePost" sortOrder="1" disabled="false"/>
+    </type>
 <!--    <type name="Magento\Checkout\Model\ShippingInformationManagement">-->
 <!--        <plugin name="save-in-quote" type="Intern\Chapter9\Plugin\Checkout\Delivery" sortOrder="10"/>-->
 <!--    </type>-->
