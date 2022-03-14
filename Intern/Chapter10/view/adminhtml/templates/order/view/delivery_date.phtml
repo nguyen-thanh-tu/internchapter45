@@ -7,5 +7,9 @@
 /**
  * @var \Magento\Sales\Block\Adminhtml\Items\Column\DefaultColumn $block
  */
-$_order = $block->getOrder() ?>
-<span><?= /* @escapeNotVerified */ __(($block->getItem()->getData('product_options'))['info_buyRequest']['example-date']) ?></span>
+$_order = $block->getOrder();
+$_productOptions = $block->getItem()->getData('product_options');
+?>
+<?php if(isset($_productOptions['info_buyRequest']['example-date'])){?>
+<span><?= /* @escapeNotVerified */ __($_productOptions['info_buyRequest']['example-date']) ?></span>
+<?php } ?>
